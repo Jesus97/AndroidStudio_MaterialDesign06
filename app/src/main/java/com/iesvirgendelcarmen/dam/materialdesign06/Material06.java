@@ -1,5 +1,6 @@
 package com.iesvirgendelcarmen.dam.materialdesign06;
 
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +29,28 @@ public class Material06 extends AppCompatActivity {
         tercerTab.setIcon(R.drawable.icono2);
         tabLayout.addTab(tercerTab,1,true);
 
-        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+
+        tabLayout.setTabTextColors(Color.MAGENTA,Color.BLACK);
+        tabLayout.setSelectedTabIndicatorColor(Color.GREEN);
+        tabLayout.setSelectedTabIndicatorHeight(15);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int elegida = tabLayout.getSelectedTabPosition();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 }
